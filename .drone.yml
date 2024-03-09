@@ -1,0 +1,14 @@
+kind: pipeline
+name: default
+
+steps:
+- name: install
+  image: node
+  commands:
+  - npm ci
+
+
+- name: build
+  image: node
+  commands:
+  - npm run build
