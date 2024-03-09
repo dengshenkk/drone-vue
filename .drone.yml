@@ -2,23 +2,15 @@ kind: pipeline
 type: docker
 name: default
 
-
 steps:
-- name: greeting
-  image: alpine
-  commands:
-  - echo hello
-  - echo world
-
-# steps:
-# - name: docker
-#   image: plugins/docker
-#   settings:
-#     repo: registry.cn-hangzhou.aliyuncs.com/closestack/drone
-#     tags: latest1
-#     dockerfile: Dockerfile
-#     username: 
-#       from_secret: docker_username
-#     password:
-#       from_secret: docker_password 
-#     registry: registry.cn-hangzhou.aliyuncs.com
+- name: docker
+  image: plugins/docker
+  settings:
+    repo: registry.cn-hangzhou.aliyuncs.com/closestack/drone
+    tags: latest1
+    dockerfile: Dockerfile
+    username: 
+      from_secret: docker_username
+    password:
+      from_secret: docker_password 
+    registry: registry.cn-hangzhou.aliyuncs.com
